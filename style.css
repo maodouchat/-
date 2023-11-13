@@ -1,13 +1,17 @@
-const boardElement = document.getElementById('board');
-
-// 初始化棋盘
-for (let i = 0; i < 225; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    boardElement.appendChild(cell);
+#board {
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(15, 30px);
+    gap: 2px;
 }
 
-// 添加点击事件监听器
-boardElement.addEventListener('click', (event) => {
-    // 在这里添加放置棋子的逻辑
-});
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #666;
+}
+
+.cell.occupied {
+    background-color: #000;
+}
